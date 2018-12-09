@@ -233,11 +233,17 @@
             android:text="Voir les graphiques"
             android:onClick="graphique"/>
     </GridLayout>
-
+<GridLayout android:id="@+id/fragment"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="invisible">
     <fragment android:name="com.example.eleonore.programmationdynamique.GraphiqueFragment"
         android:id="@+id/viewer"
         android:layout_height="match_parent"
-        android:layout_width="match_parent" />
+        android:layout_width="match_parent"
+        />
+</GridLayout>
+
 </LinearLayout>
     </ScrollView>
 
