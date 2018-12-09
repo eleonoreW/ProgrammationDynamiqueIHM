@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int DEFAULT_DEBIT = 160;
     private TextView puissanceTurbine1,puissanceTurbine2,puissanceTurbine3,puissanceTurbine4,puissanceTurbine5;
     private TextView hauteurTurbine1,hauteurTurbine2,hauteurTurbine3,hauteurTurbine4,hauteurTurbine5;
-    private TextView puissanceTotale;
+    private TextView puissanceTotale,quantiteDeversee;
 
 
     @Override
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         hauteurTurbine5 = findViewById(R.id.hauteurTurbine5);
 
         puissanceTotale = findViewById(R.id.puissanceTotale);
-
+        quantiteDeversee = findViewById(R.id.quantiteDeversee);
 
     }
 
@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         updateTurbine(turbine4,checkbox4.isChecked(),debitTurbine4,puissanceTurbine4,hauteurTurbine4);
         updateTurbine(turbine5,checkbox5.isChecked(),debitTurbine5,puissanceTurbine5,hauteurTurbine5);
         puissanceTotale.setText(Double.toString(turbine1.puissance()+turbine2.puissance()+turbine3.puissance()+turbine4.puissance()+turbine5.puissance()));
+        quantiteDeversee.setText(Integer.toString(Constante.debitTotal - turbine1.getDebitReel()-turbine2.getDebitReel()-turbine3.getDebitReel()-turbine4.getDebitReel()-turbine5.getDebitReel()));
     }
 
 
