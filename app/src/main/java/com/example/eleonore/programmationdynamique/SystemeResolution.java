@@ -112,7 +112,7 @@ public class SystemeResolution {
         Table table = new Table();
         double[] fs = new double[tur.getDebitMaxReel() / 5 + 1];
         // pour chaque valeur de x_n
-        for (int x = 0 ; x <= tur.getDebitMaxReel() ;  x += 5) {
+        for (int x = 0 ; x <= tur.getDebitMaxReel() && x<= Constante.debitTotal ;  x += 5) {
             if (x > tur.getDebitMaxReel())
                 // la turbine ne peut pas turbiner plus que ses capacités
                 fs[x/5] = 0;

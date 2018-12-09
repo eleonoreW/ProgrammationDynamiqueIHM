@@ -135,12 +135,11 @@ public class MainActivity extends AppCompatActivity {
             if(turbine.getDebitReel() !=0) {
                 puissanceTurbine.setText(Double.toString(turbine.puissance(turbine.getDebitReel())));
             } else {
-                puissanceTurbine.setText("0");
+               // puissanceTurbine.setText("0");
             }
             hauteurDeChute.setText(Double.toString(Constante.hauteurChuteNette(turbine.getDebitReel())));
         } else {
             turbine.setDebitMaxReel(0);
-            debitTurbine.setText("-");
             puissanceTurbine.setText("-");
             hauteurDeChute.setText("-");
         }
