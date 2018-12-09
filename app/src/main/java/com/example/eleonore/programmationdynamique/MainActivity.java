@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initSimulation();
+        initSimulation(turbine1,turbine2,turbine3,turbine4,turbine5);
         initViews();
     }
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void initSimulation(){
+    public static void initSimulation(Turbine turbine1,Turbine turbine2,Turbine turbine3,Turbine turbine4,Turbine turbine5){
         double[][] coeffTurbine1 = {{0.01795,-0.1966,0.002889,-1.194*Math.pow(10,-5)}, {-0.0004493,0.008152,7.483*Math.pow(10,-6)}};
          turbine1 = new Turbine(1, DEFAULT_DEBIT,coeffTurbine1);
         //      - turbine 2
@@ -115,6 +115,11 @@ public class MainActivity extends AppCompatActivity {
         updateTurbine(turbine4,checkbox4.isChecked(),debitTurbine4,puissanceTurbine4,hauteurTurbine4);
         updateTurbine(turbine5,checkbox5.isChecked(),debitTurbine5,puissanceTurbine5,hauteurTurbine5);
         puissanceTotale.setText(Double.toString(turbine1.puissance()+turbine2.puissance()+turbine3.puissance()+turbine4.puissance()+turbine5.puissance()));
+    }
+
+
+    public void graphique(View view){
+
     }
 
     private void updateTurbine(Turbine turbine, Boolean active,EditText debitTurbine, TextView puissanceTurbine,TextView hauteurDeChute) {
